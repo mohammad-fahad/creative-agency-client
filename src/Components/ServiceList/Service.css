@@ -1,0 +1,16 @@
+.sidebar{
+    position: fixed;
+    cursor: pointer;
+}
+.sidebar h6{
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+.sidebar h6:hover {
+    display: inline-block;
+    color: #009444;
+    transform: translate(5px);
+}
+.sidebar i{
+    margin-right: 5px;
+}
