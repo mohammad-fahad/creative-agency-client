@@ -18,6 +18,7 @@ const Order = () => {
         const image = JSON.stringify(data.image)
         formData.append('file', file);
         formData.append('image', image);
+        formData.append('status', 'pending');
         formData.append('service', newOrder.name);
         formData.append('price', data.price);
         formData.append('email', loggedInUser.email);

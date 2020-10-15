@@ -42,9 +42,9 @@ const Review = () => {
                     <input name="designation" className="p-4 form-control" placeholder="Your Company's name, designation" ref={register({ required: true })} /> <br/>
                     {/* errors will return when field validation fails  */}
                     {errors.exampleRequired && <span>This field is required</span>}
-                     <input name="comment" class="form-control" placeholder='Description' style={{height:"20vh"}} ref={register} /> <br/>
+                     <input name="comment" className="form-control" placeholder='Description' style={{height:"20vh"}} ref={register} /> <br/>
 
-                    <input class="pr-5 pl-5 bg-dark text-white pt-2 pb-2" style={{borderRadius:"5px"}} type="submit" />
+                    <input className="pr-5 pl-5 bg-dark text-white pt-2 pb-2" style={{borderRadius:"5px"}} type="submit" />
                 </form>
             </main>
         </div>

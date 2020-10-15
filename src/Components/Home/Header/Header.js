@@ -23,7 +23,7 @@ const Header = () => {
                 </div>
 
                 <div className="col-md-6 ml-auto">
-                    <img className="img-fluid" height="100%" src={frame} alt=""/>
+                    <img className="img-fluid" style={{paddingBottom: '23%'}}height="100%" src={frame} alt=""/>
                 </div>                
             </div>
         </div>

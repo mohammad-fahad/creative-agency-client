@@ -1,13 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 import logo from '../../images/logos/logo.png';
 import SideBar from './SideBar/SideBar';
-import Loader from 'react-loader-spinner';
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
+
+const options = [
+    { value: 'Pending', label: 'Pending' },
+    { value: 'On Going', label: 'On Going' },
+    { value: 'Done', label: 'Done' }
+]
 const AdminSevice = () => {
     const [all, setAll] = useState([]);
     const [admin, setAdmin] = useState({});
@@ -92,25 +97,35 @@ const AdminSevice = () => {
                 setAll(da);
             })
     }, [])
+    
+    const updates = (status) => {
+        fetch(`http://localhost:5000/update/${id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify(status)
+            
+        })
+    
+    }
     useEffect(() => {
         fetch(`http://localhost:5000/admin?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data))
     }, [])
-    const change = (id, status) => {
-        let final = all.find(f => f._id === id)
-        final.status = status;
-        console.log(final);
-       const manik =  all.map(al => {
-            if(all._id == final._id){
-                all.status = final.status;
-                
-            }
-            return al;
+    const change = (e, id) => {
+        fetch(`http://localhost:5000/update/${id}`, {
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({status: e.value})
         })
-        setAll(manik);
+        .then(res => res.json())
+        .then(data => {
+            if(data){
+                alert('Status updated successfully')
+            }
+        })
     }
-    
+    const defaultOption = options[0];
     return (
         <div>
             <div className="d-flex container-fluid p-3">
@@ -133,7 +148,7 @@ const AdminSevice = () => {
                         </tr>
                     </thead>
                     <tbody> 
-
+                       
                         {
                             all.map(a =>
                                 <tr className="bg-light" key={a._id}>
@@ -142,16 +157,7 @@ const AdminSevice = () => {
                                     <td>{a.service}</td>
                                     <td>{a.description}</td>
                                     <td >
-                                        <Dropdown>
-                                            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                                                {a.status}
-                                            </Dropdown.Toggle>
-                                            <Dropdown.Menu>
-                                                <Dropdown.Item href="#/action-1" className="text-success" onClick={() => change(a._id, 'Done')}>Done</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-2" className="text-warning" onClick={() => change(a._id, 'On Progress')}>On Process</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-3" className="text-danger" onClick={() => change(a._id, 'Pending')}>Pending</Dropdown.Item>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
+                                    <Dropdown options={options} onChange={(e) => {change(e, `${a._id}`)}} value={defaultOption} placeholder="Select an option" />
                                     </td>
                                 </tr>)
                         }

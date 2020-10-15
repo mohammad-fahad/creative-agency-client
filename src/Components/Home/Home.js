@@ -36,7 +36,7 @@ const Home = () => {
             </div>
             <div className="mt-5 d-flex justify-content-around">
                 {
-                    services.map(service => <Link style={{textDecoration: 'none', color:'black'}} to={`/order${service._id}`}>
+                    services.map(service => <Link style={{textDecoration: 'none', color:'black'}} to={`/order/${service._id}`}>
                         <Card key={services._id} style={{ width: '18rem', border: 'none', align: 'center' }} className="text-center effect bg-light">
                         <Card.Body>
                             {service.img ? <Card.Img variant="top" className="image-fluid mb-4" style={{ width: '25%' }} src={service.img} /> 
