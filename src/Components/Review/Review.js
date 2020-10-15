@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../App';
 import logo from '../../images/logos/logo.png';
+import SideBar from '../Admin/SideBar/SideBar';
 
 const Review = () => {
     const { loggedInUser } = useContext(UserContext);
@@ -31,20 +32,7 @@ const Review = () => {
                 <h4 style={{ marginLeft: "10vw" }}>Review</h4>
                 <h5 className="ml-auto">{loggedInUser.name}</h5>
             </div>
-            <aside className='mt-5 sidebar'>
-                <div className="d-flex mt-3">
-                    <i class="fas fa-shopping-cart pl-5 mr-2"></i>
-                    <h6> Order</h6>
-                </div>
-                <div className="d-flex mt-3">
-                    <i class="fas fa-shopping-basket pl-5 mr-2"></i>
-                    <h6> Service list</h6>
-                </div>
-                <div className="d-flex mt-3">
-                    <i class="fas fa-comment-dots fa-flip-horizontal pr-5 mr-2"></i>
-                    <h6> Review</h6>
-                </div>
-            </aside>
+            <SideBar />
             <main >
                 <form className="container container-fluid" onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}

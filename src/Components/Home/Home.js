@@ -39,7 +39,9 @@ const Home = () => {
                     services.map(service => <Link style={{textDecoration: 'none', color:'black'}} to={`/order${service._id}`}>
                         <Card key={services._id} style={{ width: '18rem', border: 'none', align: 'center' }} className="text-center effect bg-light">
                         <Card.Body>
-                            <Card.Img variant="top" className="image-fluid mb-4" style={{ width: '25%' }} src={service.img} />
+                            {service.img ? <Card.Img variant="top" className="image-fluid mb-4" style={{ width: '25%' }} src={service.img} /> 
+                            :
+                            <Card.Img variant="top" className="image-fluid mb-4" style={{ width: '25%' }} src={`data:image/png;base64,${service.image.img}`}/> }
 
                             <Card.Title>{service.name}</Card.Title>
                             <Card.Text>

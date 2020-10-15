@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 import '../ServiceList/Service.css';
+import SideBar from '../Admin/SideBar/SideBar';
 
 const Order = () => {
     const {id} = useParams();
@@ -59,20 +60,7 @@ const Order = () => {
                 <h4 style={{ marginLeft: "10vw" }}>Order</h4>
                 <h5 className="ml-auto">{loggedInUser.name}</h5>
             </div>
-            <aside className='mt-5'>
-                <div className="d-flex mt-3">
-                    <i class="fas fa-shopping-cart pl-5 mr-2"></i>
-                    <h6> Order</h6>
-                </div>
-                <div className="d-flex mt-3">
-                    <i class="fas fa-shopping-basket pl-5 mr-2"></i>
-                    <h6> Service list</h6>
-                </div>
-                <div className="d-flex mt-3">
-                    <i class="fas fa-comment-dots fa-flip-horizontal pr-5 mr-2"></i>
-                    <h6> Review</h6>
-                </div>
-            </aside>
+           <SideBar />
             <main className="container container-fluid ">
                 {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
                 <form onSubmit={handleSubmit(onSubmit)} >
