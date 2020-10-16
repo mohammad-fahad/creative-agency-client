@@ -11,7 +11,7 @@ const Review = () => {
     
     const onSubmit = data => {
         const img = {...loggedInUser, ...data};
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://creative-agency-server-f.herokuapp.com/addReview', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(img)

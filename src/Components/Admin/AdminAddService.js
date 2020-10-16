@@ -15,7 +15,7 @@ const AdminAddService = () => {
         formData.append('image', image);
         formData.append('name', data.name);
         formData.append('details', data.details);
-        fetch('http://localhost:5000/addServices', {
+        fetch('https://creative-agency-server-f.herokuapp.com/addServices', {
             method: 'POST',
             body: formData
         })

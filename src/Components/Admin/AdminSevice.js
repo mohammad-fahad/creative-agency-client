@@ -28,7 +28,7 @@ const AdminSevice = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/admin?email=${loggedInUser.email}`)
+        fetch(`https://creative-agency-server-f.herokuapp.com/admin?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -57,7 +57,7 @@ const AdminSevice = () => {
         formData.append('email', loggedInUser.email);
         formData.append('name', loggedInUser.name);
         formData.append('description', data.description);
-        fetch('http://localhost:5000/placeOrder', {
+        fetch('https://creative-agency-server-f.herokuapp.com/placeOrder', {
             method: 'POST',
             body: formData
         })
@@ -77,7 +77,7 @@ const AdminSevice = () => {
 
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/order/${id}`)
+        fetch(`https://creative-agency-server-f.herokuapp.com/order/${id}`)
             .then(res => res.json())
             .then(data => setNewOrder(data))
     }, [])
@@ -89,7 +89,7 @@ const AdminSevice = () => {
     // console.log(admin);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://creative-agency-server-f.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 const da = data.map(d => ({...d, status: 'pending'}))
@@ -99,7 +99,7 @@ const AdminSevice = () => {
     }, [])
     
     const updates = (status) => {
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://creative-agency-server-f.herokuapp.com/update/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(status)
@@ -108,12 +108,12 @@ const AdminSevice = () => {
     
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/admin?email=${loggedInUser.email}`)
+        fetch(`https://creative-agency-server-f.herokuapp.com/admin?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data))
     }, [])
     const change = (e, id) => {
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://creative-agency-server-f.herokuapp.com/update/${id}`, {
             method: 'PATCH',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({status: e.value})

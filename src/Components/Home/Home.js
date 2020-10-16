@@ -6,6 +6,7 @@ import Body from './Body/Body';
 import Feedback from './Feedback/Feedback';
 import Footer from './Footer/Footer';
 import { Link } from 'react-router-dom';
+import '../ServiceList/Service.css';
 
 
 const sponsors = [
@@ -19,7 +20,7 @@ const sponsors = [
 const Home = () => {
     const [services, setServices] = useState([])
     useEffect (() =>{
-        fetch('http://localhost:5000/allServices')
+        fetch('https://creative-agency-server-f.herokuapp.com/allServices')
         .then(res => res.json())
         .then(data => setServices(data))
     }, [])
@@ -37,7 +38,7 @@ const Home = () => {
             <div className="mt-5 d-flex justify-content-around">
                 {
                     services.map(service => <Link style={{textDecoration: 'none', color:'black'}} to={`/order/${service._id}`}>
-                        <Card key={services._id} style={{ width: '18rem', border: 'none', align: 'center' }} className="text-center effect bg-light">
+                        <Card key={services._id} style={{ width: '18rem', border: 'none', align: 'center' }} className="text-center effect bg-light service">
                         <Card.Body>
                             {service.img ? <Card.Img variant="top" className="image-fluid mb-4" style={{ width: '25%' }} src={service.img} /> 
                             :

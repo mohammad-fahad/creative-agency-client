@@ -1,16 +1,10 @@
-.sidebar{
-    position: fixed;
-    cursor: pointer;
+.service{
+    padding:20px 40px 20px 40px;
+    transition: .5s;
 }
-.sidebar h6{
-    margin-bottom: 1em;
-    font-weight: bold;
-}
-.sidebar h6:hover {
-    display: inline-block;
-    color: #009444;
-    transform: translate(5px);
-}
-.sidebar i{
-    margin-right: 5px;
+.service:hover{
+    transform: scale(1.1);
+    box-shadow: 10px 10px 40px #9D9D9D;
+    text-decoration: none;
+    background-color: white;
 }

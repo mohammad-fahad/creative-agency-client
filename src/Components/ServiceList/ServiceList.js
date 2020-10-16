@@ -12,7 +12,7 @@ const ServiceList = () => {
     // console.log(specific);
 
     useEffect (() =>{
-        fetch(`http://localhost:5000/specificOrder?email=${loggedInUser.email}`)
+        fetch(`https://creative-agency-server-f.herokuapp.com/specificOrder?email=${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => setSpecific(data))
     }, []) 
@@ -38,11 +38,13 @@ const ServiceList = () => {
                                     <div className="card p-3 m-5" style={{ borderRadius: '20px', height: '20vh',color:'#000000, 70%', marginLeft: '20%'}}>
                                         <div class="card-body p-3 d-flex">
                                             <img src={`data:image/png;base64,${service.img.img}`} style={{ width: '10vw', height: '15vh'}} class="card-img-top" alt="..." />
-                                            <h5 class="card-title">{service.service}</h5>
-                                            
+                                            <div>
+                                            <h5 class="card-title">{service.service}</h5> <br/>
+                                            <p class="card-text p-2">{service.description}</p>
+                                            </div>
                                         </div>
-                                        <p class="card-text p-2">{service.description}</p>
-                                        <Button variant="outline-danger">{service.status}</Button>
+                                        
+                                        <Button variant="outline-danger mt-3 ml-auto" style={{width:"25%", }}>{service.status}</Button>
                                     </div>
                                 </div>)
                             }

@@ -11,21 +11,16 @@ const Header = () => {
     return (
         <div className="bg">
             <NavBar />
-            <div className="d-flex mt-5 mr-5 ml-5 pr-5 pl-5 align-items-center">
-                <div className="col-md-4 ">
-                    <h1 style={{fontSize:'4em'}}><strong>Let’s Grow Your </strong><br />
-                        Brand To The <br />
-                        Next Level</h1>
-                        <p className="mt-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat </p>
-                       
-                        <button className="text-white p-2 pr-5 pl-5" style={{borderRadius: '8%', background:"#111430"}}>Hire Us</button>
-                   
-                </div>
-
-                <div className="col-md-6 ml-auto">
-                    <img className="img-fluid" style={{paddingBottom: '23%'}}height="100%" src={frame} alt=""/>
-                </div>                
+            <main  className="row d-flex align-items-center">
+            <div className="col-md-4 offset-md-1">
+                <h1 style={{ color: '#111430', fontWeight: 'bold' }}>Let's Grow Your<br />Brand To The <br /> Next Level</h1>
+                <p className="text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore eveniet necessitatibus et iusto corrupti minima.</p>
+                <button style={{ width: '40%' }} className="btn btn-dark btn-lg">Hire us</button>
             </div>
+            <div className="col-md-5">
+                <img src={frame}  className="img-fluid" alt="" style={{paddingBottom:"17%"}}/>
+            </div>
+        </main>
         </div>
     );
 };

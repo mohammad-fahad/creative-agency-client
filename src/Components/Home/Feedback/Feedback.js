@@ -9,7 +9,7 @@ import customer3 from '../../../images/customer-3.png';
 const Feedback = () => {
     const [reviews, setReviews] = useState([])
     useEffect (() =>{
-        fetch('http://localhost:5000/reviews')
+        fetch('https://creative-agency-server-f.herokuapp.com/reviews')
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])
