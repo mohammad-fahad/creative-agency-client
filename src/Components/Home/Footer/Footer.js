@@ -4,7 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 const Footer = () => {
     return (
         <div className="" style={{backgroundColor: ' #FBD062', paddingTop:"5%", paddingLeft:"5%", paddingRight:"5%"}}>
-            <div className="d-flex mt-5" >
+            <div className="d-flex flex-wrap mt-5" >
             <div className="col-md-6 container container-fluid d-flex align-items-center">
                 <div className="container-fluid col-md-6 col-sm-6">
                 <h1>
