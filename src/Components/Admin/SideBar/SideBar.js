@@ -28,13 +28,13 @@ const SideBar = () => {
             })
     }, [])
 
-    // console.log("admin", admin);
+  
 
 
     return (
         <>
             
-            <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
+            <div className="sidebar d-flex flex-column justify-content-between m-4 col-md-2 py-5 px-4">
                 <ul className="list-unstyled">
                     {
                         loggedInUser.setUser ? <div className="my-5">

@@ -14,9 +14,9 @@ const Feedback = () => {
         .then(data => setReviews(data))
     },[])
     return (
-        <div className="bg-light text-center" style={{ marginTop: '8%' }}>
+        <div className="bg-light text-center container-fluid" style={{ marginTop: '8%' }}>
             <h2 style={{ textColor: '#111430' }}>Clients <span className="text-success">Feedback</span></h2>
-            <div className="d-flex justify-content-around mt-5">
+            <div className="d-flex flex-wrap justify-content-around mt-5">
                 {
                     reviews.map(fback => <Card style={{ width: '18rem', align: 'center', marginBottom: '5%' }} className="text-center effect bg-light">
                         <Card.Body>

@@ -27,7 +27,7 @@ const Review = () => {
     };
     return (
         <div>
-            <div className="d-flex container-fluid p-3 ">
+            <div className="d-flex flex-wrap container-fluid p-3 ">
                 <img className="img-fluid " style={{ height: '8vh' }} src={logo} alt="" />
                 <h4 style={{ marginLeft: "10vw" }}>Review</h4>
                 <h5 className="ml-auto">{loggedInUser.name}</h5>

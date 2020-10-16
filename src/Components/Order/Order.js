@@ -36,11 +36,10 @@ const Order = () => {
                     history.replace('/ServiceList')
                 }
                 
-                // console.log(result);
+                
             })
             .catch(err => console.log(err))
-        // console.log(formData);
-        // data.preventDefault();
+       
        
     }
     useEffect ( () =>{
@@ -62,7 +61,7 @@ const Order = () => {
                 <h5 className="ml-auto">{loggedInUser.name}</h5>
             </div>
            <SideBar />
-            <main className="container container-fluid ">
+            <main className="container container-fluid " style={{ top: "0%"}}>
                 {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
                 <form onSubmit={handleSubmit(onSubmit)} >
                     {/* register your input into the hook by invoking the "register" function */}

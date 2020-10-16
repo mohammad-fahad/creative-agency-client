@@ -5,8 +5,8 @@ const Footer = () => {
     return (
         <div className="" style={{backgroundColor: ' #FBD062', paddingTop:"5%", paddingLeft:"5%", paddingRight:"5%"}}>
             <div className="d-flex mt-5" >
-            <div className="col-md-6 container d-flex align-items-center">
-                <div>
+            <div className="col-md-6 container container-fluid d-flex align-items-center">
+                <div className="container-fluid col-md-6 col-sm-6">
                 <h1>
                     <strong>
                     Let us handle your <br /> project, professionally.
@@ -15,7 +15,7 @@ const Footer = () => {
                 <p>With well written codes, we build amazing apps for all <br/> platforms, mobile and web apps in general.</p>
                 </div>
             </div>
-            <div className="col-md-6 container">
+            <div className="col-md-6 col-sm-6 container container-fluid">
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Name:</Form.Label>

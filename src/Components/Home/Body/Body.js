@@ -12,7 +12,7 @@ import './Body.css';
 const Body = () => {
     return (
         <div className="carousel"> 
-           <div className="text-center container mt-5 p-5">
+           <div className="text-center container container-fluid mt-5 p-5">
            <h2 className="mb-5 text-white">Here are some of <span className="text-success"> our works</span> </h2>    
     <Swiper
       

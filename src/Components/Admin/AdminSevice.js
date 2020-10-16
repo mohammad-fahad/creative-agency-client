@@ -31,11 +31,11 @@ const AdminSevice = () => {
         fetch(`https://creative-agency-server-f.herokuapp.com/admin?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+               
                 if (data) {
                     const newUser = { ...loggedInUser };
                     newUser.setUser = true;
-                    console.log(newUser);
+                    
                     setLoggedInUser(newUser)
                 }
                 else {
@@ -69,12 +69,10 @@ const AdminSevice = () => {
                     history.replace('/ServiceList')
                 }
 
-                // console.log(result);
+               
             })
             .catch(err => console.log(err))
-        // console.log(formData);
-        // data.preventDefault();
-
+       
     }
     useEffect(() => {
         fetch(`https://creative-agency-server-f.herokuapp.com/order/${id}`)
@@ -86,14 +84,14 @@ const AdminSevice = () => {
         const newFile = e.target.files[0];
         setFile(newFile);
     }
-    // console.log(admin);
+   
 
     useEffect(() => {
         fetch('https://creative-agency-server-f.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 const da = data.map(d => ({...d, status: 'pending'}))
-                console.log(da);
+                
                 setAll(da);
             })
     }, [])

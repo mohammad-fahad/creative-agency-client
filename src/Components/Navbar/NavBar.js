@@ -1,5 +1,4 @@
 import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
 import logo from '../../images/logos/logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
@@ -7,20 +6,33 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        <div className="mr-5 ml-5  pr-5 pl-5">
-            <Navbar  variant="transparent">
-                <img style={{width: '10vw'}} src={logo} alt=""/>
-                <Nav className="ml-auto">
-                    <Nav.Link className="mr-5 text-dark" to="/home">Home</Nav.Link>
-                    <Nav.Link className="mr-5 text-dark" to="/features">Our Portfolio</Nav.Link>
-                    <Nav.Link className="mr-5 text-dark" to="/pricing">Our Team</Nav.Link>
-                    <Nav.Link className="mr-5 text-dark" to="/pricing">Contact Us</Nav.Link>
-                    <Link to="/login" style={{textDecoration: 'none'}}>
-                    <button className="text-white p-2 pr-5 pl-5 mr-5" style={{borderRadius: '8%', background:"#111430"}}>Log In</button>
-                    </Link>
-                </Nav>               
-            </Navbar>
-        </div>
+        <nav style={{backgroundColor:'#FBD062'}} className="navbar navbar-expand-lg navbar-light offset-md-1">
+            <img style={{ width: '15%'}} className="navbar-brand img-fluid" src={logo} alt="Logo"/>
+
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav ml-auto">
+                    <li className="nav-item active">
+                        <Link to="/home" className="nav-link mr-5 font-weight-bold" href="#">Home <span className="sr-only">(current)</span></Link>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link mr-5 font-weight-bold" href="#">Our Portfolio</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link mr-5 font-weight-bold" href="#">Our Team</a>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/AdminSevice" className="nav-link mr-5 font-weight-bold">Contact Us</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/login"> <button type="button" className=" mr-5 font-weight-bold btn btn-dark btn-lg">Login</button></Link>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     );
 };
 

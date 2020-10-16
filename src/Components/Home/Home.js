@@ -35,7 +35,7 @@ const Home = () => {
             <div className="text-center mt-5" >
                 <h2>Provide awesome <span className="text-success"> services</span> </h2>
             </div>
-            <div className="mt-5 d-flex justify-content-around">
+            <div className="mt-5 d-flex flex-wrap justify-content-around">
                 {
                     services.map(service => <Link style={{textDecoration: 'none', color:'black'}} to={`/order/${service._id}`}>
                         <Card key={services._id} style={{ width: '18rem', border: 'none', align: 'center' }} className="text-center effect bg-light service">
