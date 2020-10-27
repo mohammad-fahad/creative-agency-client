@@ -16,7 +16,7 @@ Site is responsive, it has firebase authentication and a collection of e-mails i
 - Admin will be able to change the status of orders.
 
 
-![alt text](Frame.png)
+![Logo](https://imgur.com/G16EN5p)
 
 ### Technology Used 
 - React.js
