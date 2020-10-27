@@ -16,7 +16,7 @@ Site is responsive, it has firebase authentication and a collection of e-mails i
 - Admin will be able to change the status of orders.
 
 
-### Technology Used 
+### Technologies Used 
 - React.js
 - Base64
 - Swiper.js
