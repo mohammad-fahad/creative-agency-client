@@ -16,12 +16,6 @@ Site is responsive, it has firebase authentication and a collection of e-mails i
 - Admin will be able to change the status of orders.
 
 
-![Logo](![alt text](https://github.com/[mohammad-fahad]/[
-creative-agency-client
-1
-10
-]/blob/[main]/Frame.png?raw=true))
-
 ### Technology Used 
 - React.js
 - Base64
