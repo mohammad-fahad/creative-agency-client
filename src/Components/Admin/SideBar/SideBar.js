@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots, faHdd, faPlus, faShoppingCart, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../images/logos/logo.png';
 import { UserContext } from '../../../App';
 
 
@@ -34,7 +33,7 @@ const SideBar = () => {
     return (
         <>
             
-            <div className="sidebar d-flex flex-column justify-content-between m-4 col-md-2 py-5 px-4">
+            <div className="sidebar d-flex flex-column justify-content-between m-4 col-md-2" style={{ position: "absolute", margin: "0" }} >
                 <ul className="list-unstyled">
                     {
                         loggedInUser.setUser ? <div className="my-5">

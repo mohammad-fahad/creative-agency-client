@@ -11,7 +11,7 @@ const Order = () => {
     
     const [file, setFile] = useState(null);
     const {loggedInUser, newOrder, setNewOrder} = useContext(UserContext);
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const history = useHistory();
     const onSubmit = (data) => {       
         const formData = new FormData();

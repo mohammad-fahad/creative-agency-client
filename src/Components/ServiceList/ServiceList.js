@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import { UserContext } from '../../App';
 import logo from '../../images/logos/logo.png';
 import SideBar from '../Admin/SideBar/SideBar';
